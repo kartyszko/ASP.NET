@@ -1,0 +1,49 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="WebApplication1.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Koniec świata</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="Style.css" rel="stylesheet" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+        <div class="container">
+            <nav>
+                    <a href="Home.aspx" class="logo">
+                        <img src="Media/logo1.jpg" />
+                    </a>
+                    <a href="Coaches.aspx">Trenerzy</a>
+                    <a href="Timetable.aspx">Grafik</a>
+                    <a href="Contact.aspx">Kontakt</a>
+                    <a href="Ad.aspx">Ogłoszenia</a>
+                <% if (Session["user"] == null)
+                           { %>
+                        <a href="Login.aspx">Logowanie</a>
+                <% } else { %>
+                        <a href="addContent.aspx">Dodaj treść</a>
+                        <asp:Button ID="Button1" runat="server" Text="Wyloguj" OnClick="Button1_Click" />
+                <% } %>
+
+            </nav>
+            
+                <div>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+         </div>
+
+            <footer>
+                <p> &copy Kamila Artyszko CDV 2021</p>
+            </footer>
+        </div>
+    </form>
+</body>
+</html>

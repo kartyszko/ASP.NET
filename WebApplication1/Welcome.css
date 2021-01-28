@@ -1,0 +1,9 @@
+﻿/*welcome*/
+
+
+    section.welcome h1 {
+        font-size: 60px;
+        color: white;
+        text-align: center;
+        line-height:55vh;
+    }
