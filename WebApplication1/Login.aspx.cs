@@ -18,7 +18,7 @@ namespace WebApplication1
 
         protected void btnlogin_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\artys\OneDrive\Pulpit\Projekt_asp.net\WebApplication1\WebApplication1\App_Data\Database1.mdf;Integrated Security=True");
+            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database1.mdf;Integrated Security=True");
             con.Open();
             string query = "select count(*) from tabluser where user_name ='" + txtuser.Text + "' and pass='" + txtpass.Text +"' ";
 

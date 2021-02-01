@@ -22,7 +22,7 @@ namespace WebApplication1
 
         protected void btnSend_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\artys\OneDrive\Pulpit\Projekt_asp.net\WebApplication1\WebApplication1\App_Data\Database1.mdf; Integrated Security = True");
+            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database1.mdf;Integrated Security=True");
             con.Open();
 
             SqlCommand cmd = new SqlCommand("insert into tableAd"+ "(ID,date,ogloszenie,podpis) values (@ID,@date,@ogloszenie,@podpis)", con);
